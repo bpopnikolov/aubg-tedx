@@ -1,0 +1,30 @@
+/* Breakpoint on responsive content
+------------------------------------ */
+$content: 1200px;
+$content-tablet: 992px;
+$content-tablet-small: 768px;
+$content-phone: 576px;
+
+@mixin content {
+  @media all and (max-width: #{$content}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media all and (max-width: #{$content-tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media all and (max-width: #{$content-tablet-small}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media all and (max-width: #{$content-phone}) {
+    @content;
+  }
+}

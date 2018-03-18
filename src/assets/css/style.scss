@@ -71,6 +71,7 @@ Table of contents
 @import "./blog.css";
 @import "./style-responsive.css";
 @import "./default-theme.css";
+@import "./mixins";
 /*-------------------------------------------------------------------
     tb preloader
 -------------------------------------------------------------------*/
@@ -492,6 +493,9 @@ header.sticky li.nav-icon i {
 
 header.sticky .menuzord-menu>li>a {
     line-height: 60px;
+    @include mobile {
+        line-height: 32px;
+    }
 }
 
 .menuzord-menu>li>a,
@@ -1514,6 +1518,30 @@ header.nav-block-left {
         color: #fff;
         font-weight: 600;
     }
+}
+
+
+/* ----------------------------------------------------------------
+	speakers
+-----------------------------------------------------------------*/
+
+.team-member {
+     @include mobile {
+        margin-top: 16px;
+    }
+}
+
+.team-hover .action-btn {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.team-hover .action-btn a {
+    display: inline-block;
+}
+
+.team-hover .action-btn a i {
+    font-size: 24px;
 }
 
 
