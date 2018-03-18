@@ -217,16 +217,16 @@ import './assets/css/style.scss';
          full screen banner
          --------------------------------------------- */
 
-        $(window).bind('resizeEnd', function () {
-            $("#fullscreen-banner").height($(window).height());
-        });
+        // $(window).bind('resizeEnd', function () {
+        //     $("#fullscreen-banner").height($(window).height());
+        // });
 
-        $(window).resize(function () {
-            if (this.resizeTO) clearTimeout(this.resizeTO);
-            this.resizeTO = setTimeout(function () {
-                $(this).trigger('resizeEnd');
-            }, 300);
-        }).trigger("resize");
+        // $(window).resize(function () {
+        //     if (this.resizeTO) clearTimeout(this.resizeTO);
+        //     this.resizeTO = setTimeout(function () {
+        //         $(this).trigger('resizeEnd');
+        //     }, 300);
+        // }).trigger("resize");
 
 
 
