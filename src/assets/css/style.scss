@@ -75,6 +75,11 @@ Table of contents
 /*-------------------------------------------------------------------
     tb preloader
 -------------------------------------------------------------------*/
+body{
+    @include mobile{
+        padding-top: 51px;
+    }
+}
 
 #tb-preloader {
     position: fixed;
@@ -434,6 +439,9 @@ header.nav-center-align .logo-brand img {
     z-index: 1200;
 }
 
+
+
+
 header .light-header,
 header.sticky .light-header,
 #header.transparent-header.sticky .light-header,
@@ -446,6 +454,10 @@ header.sticky .dark-header,
 #header.transparent-header.sticky .dark-header,
 .dark-nav,
 header.sticky .semi-transparent {
+    background: rgba(10, 10, 10, 1) !important;
+}
+
+#header .header-sticky.dark-header{
     background: rgba(10, 10, 10, 1) !important;
 }
 
