@@ -8,6 +8,16 @@ import './assets/css/style.scss';
 
     "use strict"; // use strict to start
 
+
+    // fix video overlay
+    $(window).on('load', function () {
+        $('.video-wrap').height($('.main-video')[0].scrollHeight);
+    });
+
+    $(window).resize(function () {
+        $('.video-wrap').height($('.main-video')[0].scrollHeight);
+    });
+
     /* ---------------------------------------------
      tb preloader init
      --------------------------------------------- */

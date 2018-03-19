@@ -1504,6 +1504,17 @@ header.nav-block-left {
 }
 
 /* ----------------------------------------------------------------
+	scroll-banner
+-----------------------------------------------------------------*/
+
+.banner-scroll a {
+    display: block;
+    @include tablet {
+        display: none;
+    }
+}
+
+/* ----------------------------------------------------------------
 	about-section
 -----------------------------------------------------------------*/
 
@@ -1535,15 +1546,65 @@ header.nav-block-left {
 	speakers
 -----------------------------------------------------------------*/
 
-.team-member {
+.speakers-section {
+    h3 {
+        font-weight: bold;
+    }
+    p {
+        font-weight: 600;
+    }
+}
+
+.modal {
+    padding-right: 0px !important;
+}
+
+.modal-dialog {
+    margin-top: 200px !important;
+    @include tablet {
+        margin-top: 250px;
+    }
     @include mobile {
+        margin-top: 100px !important;
+    }
+}
+
+.modal-content {
+    padding: 15px 50px !important;
+    border-radius: 0px !important;
+    @include mobile {
+        padding: 15px !important;
+    }
+}
+
+.modal-content .modal-header {
+    text-align: center;
+    border-bottom: 0px !important;
+}
+
+.modal-content .modal-header h4 {
+    display: inline-block;
+}
+
+.team-member {
+    @include tablet {
         margin-top: 16px;
+        margin-bottom: 30px;
     }
 }
 
 .team-hover .action-btn {
     text-align: center;
     margin-top: 60px;
+    @include tablet {
+        margin-top: 190px;
+    }
+    @include tablet-small {
+        margin-top: 145px;
+    }
+    @include mobile {
+        margin-top: 60px;
+    }
 }
 
 .team-hover .action-btn a {
@@ -1552,6 +1613,19 @@ header.nav-block-left {
 
 .team-hover .action-btn a i {
     font-size: 24px;
+}
+
+/* ----------------------------------------------------------------
+	our team section
+-----------------------------------------------------------------*/
+
+.team-section {
+    h3 {
+        font-weight: bold;
+    }
+    p {
+        font-weight: 600;
+    }
 }
 
 /* ----------------------------------------------------------------
