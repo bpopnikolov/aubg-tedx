@@ -78,7 +78,7 @@ Table of contents
 
 body {
     @include mobile {
-        padding-top: 51px;
+        padding-top: 50px;
     }
 }
 
@@ -456,7 +456,7 @@ header.sticky .semi-transparent {
 }
 
 #header .header-sticky.dark-header {
-    @include mobile {
+    @include tablet {
         background: rgba(10, 10, 10, 1) !important;
     }
 }
