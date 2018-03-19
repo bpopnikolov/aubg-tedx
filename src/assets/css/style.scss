@@ -75,8 +75,9 @@ Table of contents
 /*-------------------------------------------------------------------
     tb preloader
 -------------------------------------------------------------------*/
-body{
-    @include mobile{
+
+body {
+    @include mobile {
         padding-top: 51px;
     }
 }
@@ -439,9 +440,6 @@ header.nav-center-align .logo-brand img {
     z-index: 1200;
 }
 
-
-
-
 header .light-header,
 header.sticky .light-header,
 #header.transparent-header.sticky .light-header,
@@ -457,8 +455,10 @@ header.sticky .semi-transparent {
     background: rgba(10, 10, 10, 1) !important;
 }
 
-#header .header-sticky.dark-header{
-    background: rgba(10, 10, 10, 1) !important;
+#header .header-sticky.dark-header {
+    @include mobile {
+        background: rgba(10, 10, 10, 1) !important;
+    }
 }
 
 .semi-transparent {
@@ -1503,13 +1503,12 @@ header.nav-block-left {
     margin-bottom: 10px;
 }
 
-
 /* ----------------------------------------------------------------
 	about-section
 -----------------------------------------------------------------*/
 
 .about-section {
-    h3{
+    h3 {
         font-weight: bold;
     }
     p {
@@ -1522,7 +1521,7 @@ header.nav-block-left {
 -----------------------------------------------------------------*/
 
 .event-section {
-    h3{
+    h3 {
         color: #ff200c;
         font-weight: bold;
     }
@@ -1532,13 +1531,12 @@ header.nav-block-left {
     }
 }
 
-
 /* ----------------------------------------------------------------
 	speakers
 -----------------------------------------------------------------*/
 
 .team-member {
-     @include mobile {
+    @include mobile {
         margin-top: 16px;
     }
 }
@@ -1555,7 +1553,6 @@ header.nav-block-left {
 .team-hover .action-btn a i {
     font-size: 24px;
 }
-
 
 /* ----------------------------------------------------------------
 	portfolio
