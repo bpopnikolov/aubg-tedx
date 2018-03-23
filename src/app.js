@@ -1,4 +1,3 @@
-
 /* ---------------------------------------------
  common scripts
  --------------------------------------------- */
@@ -8,6 +7,20 @@ import './assets/css/style.scss';
 
     "use strict"; // use strict to start
 
+    $.ajax({
+        url: 'getSpeaker.php',
+        type: 'GET',
+        success: function (data) {
+            data = JSON.parse(data);
+            renderSpeakers(data);
+        }
+    });
+
+    var renderSpeakers = function (arr) {
+        for (var i = 0; i < arr.length; i+=1) {
+            $("<div class='col-md-4'> <div class='team-member wow fadeInUp'  data-toggle='modal' data-target='#teamMemberModal' style='visibility: visible; animation-name: fadeInUp;'> <div class='team-img'> <img src='"+ arr[i].img +"' alt=''> <div class='team-intro light-txt'> <h5>"+ arr[i].names +"</h5> <span>Architect, designer</span> </div></div><div class='team-hover'> <div class='action-btn'> <a href='#' data-toggle='modal' data-target='#teamMemberModal' class='popup-gallery' title='Title 1'> <i class='icon-basic_magnifier'></i> </a> </div><div class='portfolio-description'> <h4>Read more</h4> </div></div></div></div>").appendTo($("#speakers .container .row"));
+        }
+    };
 
     // fix video overlay
     $(window).on('load', function () {
@@ -515,9 +528,13 @@ import './assets/css/style.scss';
 
             $("#clients-1").owlCarousel({
                 autoPlay: 3000, //Set AutoPlay to 3 seconds
-                items : 6,
+                items : 4,
+                pagination: false,
                 itemsDesktop : [1199,3],
-                itemsDesktopSmall : [979,3]
+                itemsDesktopSmall : [979,3],
+                nav: true,
+                smartSpeed: 900,
+                navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
 
             });
 

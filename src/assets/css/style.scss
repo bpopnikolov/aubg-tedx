@@ -1948,11 +1948,14 @@ header.nav-block-left {
 .video-parallax .container {
     position: absolute;
     top: 50%;
+    -ms-transform: translate(0%, -50%);
+    -webkit-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
     z-index: 100;
     left: 0;
     right: 0;
     color: #fff;
-    margin-top: -80px;
+    margin-top: 0px;
 }
 
 .video-parallax .container i {
