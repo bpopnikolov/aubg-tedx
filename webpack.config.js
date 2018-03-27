@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -46,17 +47,22 @@ const config = {
                     fallback: 'style-loader',
                     // publicPath: '/src/img',
                     use: [{
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                            url: false,
+                            loader: 'css-loader',
+                            options: {
+                                // sourceMap: true,
+                                url: false,
+                            },
                         },
-                    }, {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
+                        {
+                            loader: 'postcss-loader',
                         },
-                    }],
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                // sourceMap: true,
+                            },
+                        },
+                    ],
                 }),
             },
             // file-loader(for images)
@@ -101,6 +107,12 @@ const config = {
                 toType: 'template',
             },
         ]),
+        // new ImageminPlugin({
+        //     test: /\.(jpe?g|png|gif|svg)$/i,
+        //     optipng: {
+        //         optimizationLevel: 9,
+        //     },
+        // }),
         new CleanWebpackPlugin(['build']),
         new HtmlWebpackPlugin({
             template: 'index.html',
