@@ -64,3 +64,4 @@ typings/
 .next
 
 src/getSpeaker.php
+src/login.php

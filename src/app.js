@@ -7,20 +7,33 @@ import './assets/css/style.scss';
 
     "use strict"; // use strict to start
 
+    var speakersInfo = [];
+
     $.ajax({
         url: 'getSpeaker.php',
         type: 'GET',
         success: function (data) {
             data = JSON.parse(data);
             renderSpeakers(data);
+            speakersInfo = data;
         }
     });
 
     var renderSpeakers = function (arr) {
         for (var i = 0; i < arr.length; i+=1) {
-            $("<div class='col-md-4'> <div class='team-member wow fadeInUp'  data-toggle='modal' data-target='#teamMemberModal' style='visibility: visible; animation-name: fadeInUp;'> <div class='team-img'> <img src='"+ arr[i].img +"' alt=''> <div class='team-intro light-txt'> <h5>"+ arr[i].names +"</h5> <span>Architect, designer</span> </div></div><div class='team-hover'> <div class='action-btn'> <a href='#' data-toggle='modal' data-target='#teamMemberModal' class='popup-gallery' title='Title 1'> <i class='icon-basic_magnifier'></i> </a> </div><div class='portfolio-description'> <h4>Read more</h4> </div></div></div></div>").appendTo($("#speakers .container .row"));
+            $("<div class='col-md-4'> <div class='team-member wow fadeInUp' data-id='"+ arr[i].id +"'  data-toggle='modal' data-target='#teamMemberModal' style='visibility: visible; animation-name: fadeInUp;'> <div class='team-img'> <img src='"+ arr[i].img +"' alt=''> <div class='team-intro light-txt'> <h5>"+ arr[i].names +"</h5> <span>"+ arr[i].jobPosition +"</span> </div></div><div class='team-hover'> <div class='action-btn'> <i class='icon-basic_magnifier'></i> </div><div class='portfolio-description'> <h4>Read more</h4> </div></div></div></div>").appendTo($("#speakers .container .row"));
         }
     };
+
+    $(document).on("click",".team-member",function() {
+        var idOfMember = $(this).data('id');
+        var memberInfo =  speakersInfo.find(function(member) {
+            return member.id == idOfMember;
+        });
+
+        $("#teamMemberModalLongTitle").text(memberInfo.names);
+        $("#teamMemberInfo").text(memberInfo.nameCard);
+    });
 
     // fix video overlay
     $(window).on('load', function () {
