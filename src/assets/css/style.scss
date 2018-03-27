@@ -1611,8 +1611,9 @@ header.nav-block-left {
     display: inline-block;
 }
 
-.team-hover .action-btn a i {
+.team-hover .action-btn i {
     font-size: 24px;
+    cursor: pointer;
 }
 
 /* ----------------------------------------------------------------
@@ -1948,11 +1949,14 @@ header.nav-block-left {
 .video-parallax .container {
     position: absolute;
     top: 50%;
+    -ms-transform: translate(0%, -50%);
+    -webkit-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
     z-index: 100;
     left: 0;
     right: 0;
     color: #fff;
-    margin-top: -80px;
+    margin-top: 0px;
 }
 
 .video-parallax .container i {
@@ -4341,3 +4345,39 @@ address p {
 .gray-bg-alt {
     background: #e8e8e8;
 }
+
+
+/*--------------------------------------
+    custom
+--------------------------------------*/
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+ }
+
+ .sponsorts-content {
+    .row {
+        margin-top: 48px;
+
+        &:first-child {
+            margin-top: 0px;
+        }
+
+        &>div {
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+    } 
+    img {
+        max-height: 90px;
+        width: auto;
+        max-width: 80%;
+        margin: 0 auto;
+        display: block;
+     }
+
+ }
